@@ -1,5 +1,4 @@
 import { BsCalendarDate, BsFillPencilFill, BsFillTrashFill } from 'react-icons/bs'
-import { BiTimeFive } from 'react-icons/bi'
 
 import styles from './ToDoItem.module.scss'
 
@@ -10,14 +9,10 @@ export default function ToDoItem() {
         <input type="checkbox" name="" id="checkToDo" />
         <h3>Nome da tarefa</h3>
       </div>
-      <div className={styles.itemDateAndTime}>
+      <div className={styles.itemDate}>
         <div>
           <BsCalendarDate />
           <p>11/11/1111</p>
-        </div>
-        <div>
-          <BiTimeFive />
-          <p>1h</p>
         </div>
       </div>
       <div className={styles.itemActions}>
