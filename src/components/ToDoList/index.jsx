@@ -1,14 +1,14 @@
 import styles from './ToDoList.module.scss'
-import ToDoItem from '../ToDoItem'
-
 
 export default function ToDoList() {
   return (
-    <ul className={styles.list}>
-      <ToDoItem />
-      <ToDoItem />
-      <ToDoItem />
-      <ToDoItem />
-    </ul> 
+    <>
+      <h1 className={styles.principalTitle}>
+        To Do List
+      </h1>
+      <ul className={styles.list}>
+        <p className={styles.withoutTasks}>Não há tarefas para realizar</p>
+      </ul>
+    </> 
   )
 }
