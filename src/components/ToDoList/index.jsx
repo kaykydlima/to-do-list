@@ -6,6 +6,9 @@ export default function ToDoList() {
   return (
     <ul className={styles.list}>
       <ToDoItem />
+      <ToDoItem />
+      <ToDoItem />
+      <ToDoItem />
     </ul> 
   )
 }
