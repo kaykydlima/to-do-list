@@ -1,11 +1,11 @@
-import ToDoList from "./components/ToDoList";
+import Home from "./components/Home";
 
 import styles from './App.module.scss'
 
 export default function App() {
   return(
     <main className={styles.app}>
-      <ToDoList />
+      <Home />
     </main>
   )
 }
