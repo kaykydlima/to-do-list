@@ -4,7 +4,7 @@ import styles from './Home.module.scss'
 
 export default function Home() {
   return(
-    <main>
+    <main className={styles.home}>
       <h1 className={styles.principalTitle}>
         To Do List
       </h1>

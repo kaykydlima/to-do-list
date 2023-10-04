@@ -1,5 +1,12 @@
 $zino50: #fafafa;
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
 .principalTitle {
   color: $zino50;
   font-size: 2.5rem;
