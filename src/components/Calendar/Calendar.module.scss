@@ -1,0 +1,13 @@
+$zino900: #222;
+$zino50: #fafafa;
+
+
+.calendarContainer {
+  background: $zino900;
+  color: $zino50;
+  padding: 2rem;
+}
+
+.fc-event{
+  cursor: pointer;
+}

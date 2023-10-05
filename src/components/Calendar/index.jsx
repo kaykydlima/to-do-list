@@ -5,8 +5,10 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { ToDoContext } from "../../contexts/toDoContext";
 import { useContext } from "react";
 
+import styles from './Calendar.module.scss'
+
 function Calendar() {
-  const {tasks} = useContext(ToDoContext)
+  const { tasks } = useContext(ToDoContext)
 
   const events = tasks.map(task => ({
    title: task.name,
@@ -14,10 +16,15 @@ function Calendar() {
    end: task.finalDate 
   }))
 
-  console.log(tasks)
+  const buttonNames = {
+    today: 'Hoje',
+    month: 'Mês',
+    week: 'Semana',
+    day: 'Dia'
+  }
 
   return (
-    <div>
+    <div className={styles.calendarContainer}>
       <Fullcalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView={"dayGridMonth"}
@@ -28,6 +35,14 @@ function Calendar() {
         }}
         height={"90vh"}
         events={events}
+        locale='pt-br'
+        buttonText={buttonNames}
+        eventClick={(info) => {
+          console.log(info)
+          info.el.style.borderColor = 'red';
+        }}
+
+        eventMouseEnter={(info) => info.el.style.cursor = 'pointer'}
       />
 
     </div>
