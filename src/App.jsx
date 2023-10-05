@@ -1,20 +1,23 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ToDoContext } from './contexts/toDoContext'
 
-import ToDoRoutes from "./routes/ToDoRoutes";
 import { getTask } from './services/toDoServices';
-import { useEffect } from 'react';
+import ToDoRoutes from './routes/ToDoRoutes';
+import Menu from './components/Menu';
 
 export default function App() {
   const [tasks, setTasks] = useState([])
   
   useEffect(() => {
     getTask().then(resp => setTasks(resp))
-  }, [])
+  }, [tasks])
 
   return(
+    <>
+    <Menu />
     <ToDoContext.Provider value={{tasks}}>
-      <ToDoRoutes />
+     <ToDoRoutes />
     </ToDoContext.Provider>
+    </>
   )
 }

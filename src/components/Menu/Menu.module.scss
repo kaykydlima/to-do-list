@@ -1,0 +1,26 @@
+$zino800: #27272a;
+$zino50: #fafafa;
+
+.header {
+  align-items: center;
+  background: $zino800;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.navigationList {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.navigationListItem {
+  a {
+    color: $zino50;
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+
+  }
+}
