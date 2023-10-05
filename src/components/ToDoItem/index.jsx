@@ -19,11 +19,16 @@ export default function ToDoItem({ task }) {
     return date < 10 ? `0${date}` : date
   }
 
+  function verifyQuantityCharactersInTaskName() {
+    const name = task.name 
+    return name.length >= 12 ? name.substring(0, 10) + "..." : name
+  }
+
   return (
     <li className={styles.listItem}>
       <div className={styles.itemNameAndInput}>
         <input type="checkbox" name="" id="checkToDo" />
-        <h3>{ task.name }</h3>
+        <h3>{ verifyQuantityCharactersInTaskName() }</h3>
       </div>
       <div className={styles.itemDate}>
         <div>

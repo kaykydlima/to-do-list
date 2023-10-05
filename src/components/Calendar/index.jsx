@@ -5,6 +5,8 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { ToDoContext } from "../../contexts/toDoContext";
 import { useContext } from "react";
 
+import ToDoForm from '../ToDoForm'
+
 import styles from './Calendar.module.scss'
 
 function Calendar() {
@@ -25,6 +27,7 @@ function Calendar() {
 
   return (
     <div className={styles.calendarContainer}>
+      <ToDoForm />
       <Fullcalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
         initialView={"dayGridMonth"}
@@ -37,10 +40,6 @@ function Calendar() {
         events={events}
         locale='pt-br'
         buttonText={buttonNames}
-        eventClick={(info) => {
-          console.log(info)
-          info.el.style.borderColor = 'red';
-        }}
 
         eventMouseEnter={(info) => info.el.style.cursor = 'pointer'}
       />

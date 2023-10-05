@@ -44,14 +44,17 @@ $blue: #172554;
     }
     
   }
+
   .taskFormButton {
     background: $blue;
     border: none;
     border-radius: 5px;
     color: $zino50;
+    cursor: pointer;
     font-weight: 700;
     font-size: 0.95rem;
     padding: 11px 16px;
+    margin-bottom: 2rem;
     margin-top: 15px;
     width: 100px;
   }
