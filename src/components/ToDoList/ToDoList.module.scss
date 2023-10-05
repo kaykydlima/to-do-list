@@ -1,4 +1,5 @@
 $zino50: #fafafa;
+$zino900: #222;
 
 .principalTitle {
   color: $zino50;
@@ -9,6 +10,7 @@ $zino50: #fafafa;
 
 .list {
   align-items: center;
+  background: $zino900;
   display: flex;
   justify-content: center;
   flex-direction: column;
