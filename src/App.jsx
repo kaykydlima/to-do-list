@@ -14,7 +14,6 @@ export default function App() {
 
   return(
     <ToDoContext.Provider value={{tasks}}>
-
       <ToDoRoutes />
     </ToDoContext.Provider>
   )
