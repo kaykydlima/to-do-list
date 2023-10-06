@@ -1,9 +1,12 @@
-import { BsCalendarDate, BsFillTrashFill } from 'react-icons/bs'
+import { BsCalendarDate, BsFillTrashFill, BsPlusLg } from 'react-icons/bs'
 
 import styles from './ToDoItem.module.scss'
-import { deleteTask as deleteTaskService } from '../../services/toDoServices'
+import { deleteTask as deleteTaskService, endTask as endTaskService } from '../../services/toDoServices'
+import { useState } from 'react'
 
 export default function ToDoItem({ task, deleteTask }) {
+
+  const [taskFinish, setTaskFinish] = useState([task.finish])
 
   function convertedDate() {
       const date = new Date(task.initialDate)
@@ -29,22 +32,42 @@ export default function ToDoItem({ task, deleteTask }) {
   function removeTask() {
     deleteTaskService(task.id)
       .then(() => deleteTask())
-      .catch(error => console.log(error))
+      .catch(error => console.error(error))
+  }
+
+  function finishTaks() {
+    const newTaskFinish = !taskFinish
+    setTaskFinish(newTaskFinish)
+
+    endTaskService(task.id, {
+      id: task.id,
+      name: task.name,
+      initialDate: task.initialDate,
+      finalDate: task.finalDate,
+      finish: newTaskFinish
+    })
+    .then(() => {
+        console.log(' funciona')
+      })
+      .catch(error => {
+        alert('Não foi possível')
+        console.error(error)
+      })
   }
 
   return (
     <li className={styles.listItem}>
-      <div className={styles.itemNameAndInput}>
-        <input type="checkbox" name="" id="checkToDo" />
+      <div className={`${styles.itemName} ${task.finish ? styles.finish : ''}`}>
         <h3>{ verifyQuantityCharactersInTaskName() }</h3>
       </div>
-      <div className={styles.itemDate}>
+      <div className={`${styles.itemDate} ${task.finish ? styles.finish : ''}`}>
         <div>
           <BsCalendarDate />
           <p>{convertedDate()}</p>
         </div>
       </div>
       <div className={styles.itemActions}>
+        <button className={styles.finish} onClick={finishTaks}><BsPlusLg /></button>
         <button className={styles.delete} onClick={removeTask}><BsFillTrashFill /></button>
       </div>
     </li>

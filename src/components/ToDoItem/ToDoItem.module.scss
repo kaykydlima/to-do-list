@@ -2,6 +2,7 @@ $zino800: #27272a;
 $zino700: #3f3f46;
 $zino50: #fafafa;
 $red: #991b1b;
+$green: #14532d;
 
 .listItem {
   align-items: center;
@@ -21,13 +22,17 @@ $red: #991b1b;
     gap: 10px;
   }
 
+  .finish {
+    text-decoration: line-through;
+  }
+
   .itemDate {
     flex-grow: 3;
     text-align: center;
     width: 33.3%;
   }
 
-  .itemNameAndInput {
+  .itemName {
     font-size: 1.25rem;
     width: 33.3%;
   }
@@ -35,17 +40,21 @@ $red: #991b1b;
   .itemActions {
     font-size: 1.15rem;
     .delete,
-    .edit {
+    .finish {
       border: none;
       border-radius: 10px;
       color: $zino50;
+      cursor: pointer;
       padding: 0.5rem;
       text-align: center;
     }
 
     .delete {
       background: $red;
-      cursor: pointer;
+    }
+
+    .finish {
+      background: $green;
     }
 
   }
@@ -59,7 +68,7 @@ $red: #991b1b;
     width: 580px;
     line-height: 12px;
 
-    .itemNameAndInput {
+    .itemName {
       font-size: 1rem;
     }
 

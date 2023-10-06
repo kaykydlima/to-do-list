@@ -9,7 +9,10 @@ export default function App() {
   const [tasks, setTasks] = useState([])
   
   useEffect(() => {
-    getTask().then(resp => setTasks(resp))
+    getTask().then(resp => setTasks(resp)).catch(error => {
+      console.error(error)
+      alert('Não foi possível consultar suas tarefas, por favor, retorne novamente mais tarde!')
+    })
   }, [])
 
   return(

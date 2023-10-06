@@ -1,26 +1,46 @@
-import axios from 'axios'
+
+import api from './config/http.config'
 
 export function getTask() {
-  return axios.get('http://localhost:3000/tasks')
+  return api.get('http://localhost:3000/tasks')
     .then(resp => resp.data)
-    .then(list => list)
-    .catch(error => console.log(error))
+    .catch(error => {
+      if (error.response || error.request || error.response.data || error.message) {
+        console.error('Erro na API:', error.response.data)
+        return []
+      }
+    })
 }
 
 export function createTask(task) {
-  return axios.post('http://localhost:3000/tasks', task)
-    .then(() => 'Tarefa criada com sucesso')
-    .catch(error => console.log(error))
+  return api.post('http://localhost:3000/tasks', task)
+    .then(resp => resp.data)
+    .catch(error => {
+      if (error.response || error.request || error.response.data || error.message) {
+        console.error('Erro na API:', error.response.data)
+        return []
+      }
+    })
 }
 
 export function deleteTask(taskId) {
-  return axios.delete(`http://localhost:3000/tasks/${taskId}`)
-    .then(() => 'Tarefa deletada com sucesso!')
-    .catch(error => console.log(error))
+  return api.delete(`http://localhost:3000/tasks/${taskId}`)
+    .then(resp => resp.data)
+    .catch(error => {
+      if (error.response || error.request || error.response.data || error.message) {
+        console.error('Erro na API:', error.response.data)
+        return []
+      }
+    })
 }
 
 export function endTask(taskId, task) {
-  return axios.put(`http://localhost:3000/tasks/${taskId}`, task)
-    .then(() => 'Tarefa finalizada com sucesso!')
-    .catch(error => console.log(error))
+  return api.put(`http://localhost:3000/tasks/${taskId}`, task)
+    .then(resp => resp.data)
+    .catch(error => {
+      if (error.response || error.request || error.response.data || error.message) {
+        console.error('Erro na API:', error.response.data)
+        return []
+      }
+    })
 }

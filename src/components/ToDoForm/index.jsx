@@ -8,7 +8,8 @@ export default function ToDoForm() {
   const initialDate = {
     name: '',
     initialDate: '',
-    finalDate: ''
+    finalDate: '',
+    finish: false
   }
 
   const [task, setTask] = useState(initialDate)
