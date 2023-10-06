@@ -21,8 +21,9 @@ export default function ToDoItem({ task, deleteTask }) {
   }
 
   function verifyQuantityCharactersInTaskName() {
-    const name = task.name 
-    return name.length >= 12 ? name.substring(0, 10) + "..." : name
+    console.log(task.name)
+    const name = [task.name] 
+    return [...name].length >= 12 ? name.substring(0, 10) + "..." : name
   }
 
   function removeTask() {

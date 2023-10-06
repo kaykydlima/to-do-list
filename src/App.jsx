@@ -10,7 +10,7 @@ export default function App() {
   
   useEffect(() => {
     getTask().then(resp => setTasks(resp))
-  }, [tasks])
+  }, [])
 
   return(
     <>

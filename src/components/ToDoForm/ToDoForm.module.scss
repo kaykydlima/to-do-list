@@ -2,6 +2,7 @@ $zino50: #fafafa;
 $zino800: #27272a;
 $zino700: #3f3f46;
 $blue: #172554;
+$red: #b62222;
 
 .secundaryTitle {
   color: $zino50;
@@ -45,6 +46,10 @@ $blue: #172554;
     
   }
 
+  .error {
+    color: $red;
+    flex-grow: 1;
+  }
   .taskFormButton {
     background: $blue;
     border: none;

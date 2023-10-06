@@ -9,12 +9,18 @@ export function getTask() {
 
 export function createTask(task) {
   return axios.post('http://localhost:3000/tasks', task)
-    .then(resp => resp.data)
+    .then(() => 'Tarefa criada com sucesso')
     .catch(error => console.log(error))
 }
 
-export function deleteTask(taskId){
+export function deleteTask(taskId) {
   return axios.delete(`http://localhost:3000/tasks/${taskId}`)
-    .then(resp => resp.data)
+    .then(() => 'Tarefa deletada com sucesso!')
+    .catch(error => console.log(error))
+}
+
+export function endTask(taskId, task) {
+  return axios.put(`http://localhost:3000/tasks/${taskId}`, task)
+    .then(() => 'Tarefa finalizada com sucesso!')
     .catch(error => console.log(error))
 }
