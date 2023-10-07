@@ -49,7 +49,7 @@ export default function ToDoForm() {
 
   return (
     <section>
-      <h2 className={styles.secundaryTitle}>Register a new task</h2>
+      <h2 className={styles.secundaryTitle}>Registre uma nova tarefa</h2>
       <form action="post" className={styles.taskForm} onSubmit={saveTask}>
         <label htmlFor="taskName" className={`${styles.taskFormLabel} ${styles.name}`}>
           Digite o titulo da tarefa:

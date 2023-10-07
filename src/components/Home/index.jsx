@@ -6,7 +6,7 @@ export default function Home() {
   return(
     <main className={styles.home}>
       <h1 className={styles.principalTitle}>
-        To Do List
+        Lista de tarefas
       </h1>
       <ToDoForm />
       <ToDoList />
