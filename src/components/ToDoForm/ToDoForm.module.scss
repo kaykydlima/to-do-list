@@ -13,11 +13,10 @@ $red: #b62222;
 }
 
 .taskForm {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+  justify-items: center;
+  display: grid;
   padding: 1rem;
-
+  
   .taskFormLabel {
     color: $zino50;
     display: flex;

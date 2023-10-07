@@ -51,17 +51,17 @@ export default function ToDoForm() {
     <section>
       <h2 className={styles.secundaryTitle}>Register a new task</h2>
       <form action="post" className={styles.taskForm} onSubmit={saveTask}>
-        <label htmlFor="taskName" className={styles.taskFormLabel}>
+        <label htmlFor="taskName" className={`${styles.taskFormLabel} ${styles.name}`}>
           Digite o titulo da tarefa:
           <input type="text" value={task.name} name='name' placeholder='Titulo da tarefa' id='taskName' onChange={handleChange} className={styles.taskFormInput} onBlur={handleValidation} />
           {errors.name && <p className={styles.error}><strong>Erro: {errors.name}</strong></p>}
         </label>
-        <label htmlFor="taskDate" className={styles.taskFormLabel}>
+        <label htmlFor="taskDate" className={`${styles.taskFormLabel} ${styles.initialDate}`}>
           Digite a data para o inicio da tarefa:
           <input type="datetime-local" value={task.initialDate} name='initialDate' id="taskDate" className={styles.taskFormInput} onChange={handleChange} onBlur={handleValidation} />
           {errors.initialDate && <p className={styles.error}><strong>Erro: {errors.initialDate}</strong></p>}
         </label>
-        <label htmlFor="taskEndDate" className={styles.taskFormLabel}>
+        <label htmlFor="taskEndDate" className={`${styles.taskFormLabel} ${styles.finalDate}`}>
           Digite a data para o final da tarefa:
           <input type="datetime-local" value={task.finalDate} name='finalDate' id="taskEndDate" className={styles.taskFormInput} onChange={handleChange} onBlur={handleValidation} />
           {errors.finalDate && <p className={styles.error}><strong>Erro: {errors.finalDate}</strong></p>}
