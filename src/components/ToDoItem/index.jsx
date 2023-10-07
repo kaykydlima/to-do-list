@@ -9,13 +9,13 @@ export default function ToDoItem({ task, deleteTask }) {
   const [taskFinish, setTaskFinish] = useState([task.finish])
 
   function convertedDate() {
-      const date = new Date(task.initialDate)
+    const date = new Date(task.initialDate)
 
-      const day = verifyIfDataIsUnder10(date.getDate())
-      const month = verifyIfDataIsUnder10(date.getDate())
-      const year = date.getFullYear()
-      
-      return `${day}/${month}/${year}`
+    const day = verifyIfDataIsUnder10(date.getDate())
+    const month = verifyIfDataIsUnder10(date.getDate())
+    const year = date.getFullYear()
+
+    return `${day}/${month}/${year}`
 
   }
 
@@ -24,8 +24,7 @@ export default function ToDoItem({ task, deleteTask }) {
   }
 
   function verifyQuantityCharactersInTaskName() {
-    console.log(task.name)
-    const name = [task.name] 
+    const name = [task.name]
     return [...name].length >= 12 ? name.substring(0, 10) + "..." : name
   }
 
@@ -46,11 +45,11 @@ export default function ToDoItem({ task, deleteTask }) {
       finalDate: task.finalDate,
       finish: newTaskFinish
     })
-    .then(() => {
-        console.log(' funciona')
+      .then(resp => {
+        resp
       })
       .catch(error => {
-        alert('Não foi possível')
+        alert('Não foi possível finalizar a terafa.')
         console.error(error)
       })
   }
@@ -58,7 +57,7 @@ export default function ToDoItem({ task, deleteTask }) {
   return (
     <li className={styles.listItem}>
       <div className={`${styles.itemName} ${task.finish ? styles.finish : ''}`}>
-        <h3>{ verifyQuantityCharactersInTaskName() }</h3>
+        <h3>{verifyQuantityCharactersInTaskName()}</h3>
       </div>
       <div className={`${styles.itemDate} ${task.finish ? styles.finish : ''}`}>
         <div>

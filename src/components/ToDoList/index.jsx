@@ -7,8 +7,8 @@ export default function ToDoList() {
   const { tasks, setTasks } = useToDoContext()
 
   function deleteTask(taskRemoved) {
-    const task = tasks.filter(taskId => taskId !== taskRemoved.id)
-    setTasks(task)
+    const newTasks = tasks.filter(taskId => taskId !== taskRemoved.id)
+    setTasks(newTasks)
   }
 
   return (
